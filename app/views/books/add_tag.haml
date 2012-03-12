@@ -1,0 +1,4 @@
+=form_tag "/books/#{@book.id}/do_add_tag",:method=>:post do
+  =text_field_tag "name"
+  =submit_tag "增加"
+		
