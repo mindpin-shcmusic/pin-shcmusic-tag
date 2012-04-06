@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include UserAuthMethods
+  acts_as_tagger
   
   has_one :online_record, :dependent => :destroy
   

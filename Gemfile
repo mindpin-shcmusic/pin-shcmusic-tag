@@ -41,3 +41,5 @@ group :test do
 end
 
 gem 'uuidtools', :require => 'uuidtools'
+gem "acts-as-taggable-on", "~> 2.2.2"
+gem "rubyzip"

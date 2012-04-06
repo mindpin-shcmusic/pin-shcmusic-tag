@@ -1,10 +1,9 @@
 -@books.each do |book|
   %div
     %span=book.name
-    -book.tags.each do |tag|
-      %div
-        %span=tag.name
-        =link_to "删除","/books/#{book.id}/remove_tag?tag_name=#{tag.name}",:method=>:delete
+    %div
+    -book.private_tags_from(current_user).each do |name|
+      %div=name
   %div
     =link_to "增加标签","/books/#{book.id}/add_tag"
 		

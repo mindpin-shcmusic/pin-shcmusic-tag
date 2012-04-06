@@ -1,4 +1,6 @@
 =form_tag "/books/#{@book.id}/do_add_tag",:method=>:post do
-  =text_field_tag "name"
+  .field
+    %lable 增加多个标签 用 "," 分割
+    =text_field_tag "name",@book.private_tags_from(current_user)*","
   =submit_tag "增加"
 		

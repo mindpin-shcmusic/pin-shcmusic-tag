@@ -1,5 +1,4 @@
 class Book < ActiveRecord::Base
-  include Tagging::TaggableMethods
-  
   validates :name, :presence => true
+  acts_as_taggable_on :private_tags
 end

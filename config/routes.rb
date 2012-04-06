@@ -15,7 +15,6 @@ Voteapp::Application.routes.draw do
     member do
       get :add_tag
       post :do_add_tag
-      delete :remove_tag
     end
   end
 end

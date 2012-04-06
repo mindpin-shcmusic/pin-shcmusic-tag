@@ -13,12 +13,9 @@ class BooksController < ApplicationController
   end
   
   def do_add_tag
-    @book.add_tag(current_user,params[:name])
+    name = params[:name].split(/,|，| /)*","
+    current_user.tag(@book, :with => name, :on=>:private_tags, :skip_save => true)
     redirect_to "/books"
   end
   
-  def remove_tag
-    @book.remove_tag(params[:tag_name])
-    redirect_to "/books"
-  end
 end
